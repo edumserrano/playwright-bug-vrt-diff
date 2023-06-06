@@ -1,0 +1,124 @@
+@import "/src/styles/styles.less";
+
+#page-container {
+  position: relative;
+  min-height: 100vh;
+
+  #main-wrap {
+    display: flex;
+    min-height: 50vh;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 2.5rem;
+  }
+
+  .main-wrapper {
+    min-height: 50vh;
+    width: 100%;
+    max-width: 1244px;
+    background-color: transparent;
+    -webkit-backdrop-filter: blur(50px);
+    backdrop-filter: blur(50px);
+    text-align: center;
+    margin-bottom: 150px;
+    margin-top: 5%;
+    padding: 0 32px 48px;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: row;
+
+    padding: 20px 84px;
+
+    a.homepage-link,
+    a.logo:hover {
+      display: flex;
+      align-items: center;
+
+      padding: auto;
+
+      color: white;
+      text-decoration: none;
+      text-align: left;
+
+      img.global-nav-img {
+        width: 163px;
+        height: 40px;
+      }
+    }
+  }
+
+  @media (max-width: @breakpoint-768px) {
+    nav {
+      padding: 20px 48px;
+    }
+  }
+
+  @media (max-width: @breakpoint-375px) {
+    nav {
+      padding: 20px 32px;
+    }
+  }
+
+  footer {
+    background-color: transparent;
+    backdrop-filter: blur(50px) brightness(103%);
+    -webkit-backdrop-filter: blur(50px) brightness(103%);
+    min-height: 150px;
+  }
+
+  .footer-wrapper {
+    padding-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    &.flex-item {
+      flex: 25%;
+    }
+  }
+
+  .footer-section-links {
+    display: flex;
+    flex-direction: column;
+
+    a,
+    p {
+      margin-bottom: 20px;
+      color: @dark-white;
+      text-decoration: none;
+      font: 16px/19px Lato;
+
+      &:hover:not(p) {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .copyright-text {
+    color: @dark-white;
+    text-decoration: none;
+    font: 16px/20px Lato;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  @media (max-width: @breakpoint-768px) {
+    .footer-wrapper {
+      padding: 0 0 25px 25px;
+
+      #full-flex-top,
+      #full-flex-bottom {
+        flex: 100%;
+      }
+
+      .flex-item {
+        flex: 50%;
+        margin-top: 20px;
+      }
+    }
+  }
+}
