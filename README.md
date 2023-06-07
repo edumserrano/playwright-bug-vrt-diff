@@ -21,6 +21,7 @@ Run `npm run test` from the root of the repo to run the tests. It will run the `
 ## Issues trying to get consistent VRT
 
 > **Note**
+>
 > All these scenarios were executed from a Windows OS as the base OS.
 
 ### Hardware accelaration and headless mode
@@ -40,6 +41,7 @@ Run `npm run test` from the root of the repo to run the tests. It will run the `
   <summary>Screenshot from npm run start</summary>
   
   > **Note**
+  >
   > My PC has a higher resolution than 1920x1080, I've used the browser tools to try and get close for the manual screenshot I took. Anyways, what's important in this screenshot is looking at how the blur looks correct and how different it is from when running the test via `npm run test`.
   > 
 
@@ -59,6 +61,7 @@ launchOptions: {
 to the chromium project settings in the [playwright.config.ts](/playwright.config.ts) file, then the blur of screenshot from debug will look equal to when running without debug.
 
 > **Note**
+>
 > The way the blur is intended to look like is how it looks when hardware acceleration is enabled
 >
 > The blur effect is being created with:
@@ -99,6 +102,7 @@ The screenshot generated from Ubuntu will have some slight differences regarding
 </details>
 
 > **Note**
+> 
 > The font I'm using on the app is [Lato Regular 400 from google fonts](https://fonts.google.com/specimen/Lato?preview.text=Whereas%20recognition%20of%20the%20inherent%20dignity&preview.text_type=custom). 
 >  
 > See the below at [index.html](/src/index.html):
@@ -156,6 +160,7 @@ The debug will fail because there are differences in the screenshots:
 </details>
 
 > **Note**
+>
 > To make the comparison easier in debug vs not debug I've added `ignoreDefaultArgs: ["--hide-scrollbars"]` in the [playwright.config.ts](/playwright.config.ts) file. This makes sure scrollbar is always visible whether running the test in debug mode or not. 
 >
 > However I'd say that this was also unexpected to me even if it's default behavior. Couldn't find any mention to the fact that the scrollbar is disabled in headless mode when searching the [playwright docs](https://playwright.dev/docs). Perhaps a chance for improving the docs?
