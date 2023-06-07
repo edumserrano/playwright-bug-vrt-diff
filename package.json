@@ -2,15 +2,8 @@
   "name": "uk-academic-sign-in",
   "version": "0.0.0",
   "scripts": {
-    "start": "npx ng version && npx ng serve",
-    "test-istanbul": "npm run clean-istanbul && npm run setup-istanbul && npx playwright test --config ./tests/babel-istanbul/playwright.config.ts && npx nyc report",
-    "test-monocart": "npm run clean-monocart && npx playwright test --config ./tests/monocart/playwright.config.ts",
-    "open-istanbul-coverage": "open-cli ./coverage/index.html",
-    "open-monocart-coverage": "open-cli ./tests/monocart/test-results/reporters/monocart/coverage/index.html",
-    "clean-istanbul": "rimraf ./.nyc_output ./coverage ./tests/babel-istanbul/test-results",
-    "clean-monocart": "rimraf ./tests/monocart/test-results",
-    "setup-istanbul": "npx cpy ./angular-configs/angular-babel-istanbul.json ./ --flat --rename=angular.json",
-    "setup-monocart": "npx cpy ./angular-configs/angular-monocart.json ./ --flat --rename=angular.json"
+    "start": "npx ng serve -o",
+    "test": "npx playwright test"
   },
   "private": true,
   "dependencies": {

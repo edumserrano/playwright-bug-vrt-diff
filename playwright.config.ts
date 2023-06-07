@@ -48,13 +48,13 @@ export default defineConfig({
   /* Configure projects for major browsers */
   projects: [
     {
-      name: "default-chromium",
+      name: "chromium",
       use: {
         ...devices["Desktop Chrome"],
         viewport: { width: 1920, height: 1080 },
         launchOptions: {
           // args: ["--disable-gpu"],
-          ignoreDefaultArgs: ["--hide-scrollbars"],
+          // ignoreDefaultArgs: ["--hide-scrollbars"],
         },
       },
     },
