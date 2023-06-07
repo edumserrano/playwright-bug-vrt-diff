@@ -1,14 +1,14 @@
 - [Playwright bug - Visual Regression Testing (VRT) diff](#playwright-bug---visual-regression-testing-vrt-diff)
   - [How to run the app and tests](#how-to-run-the-app-and-tests)
   - [Issues trying to get consistent VRT](#issues-trying-to-get-consistent-vrt)
-    - [Hardware accelaration and headless mode](#hardware-accelaration-and-headless-mode)
+    - [Hardware acceleration and headless mode](#hardware-acceleration-and-headless-mode)
     - [Chromium screenshot in Windows vs Chromium screenshot in Ubuntu](#chromium-screenshot-in-windows-vs-chromium-screenshot-in-ubuntu)
     - [Differences when running the test in/out of debug mode](#differences-when-running-the-test-inout-of-debug-mode)
   - [Notes](#notes)
 
 # Playwright bug - Visual Regression Testing (VRT) diff
 
-This is a demo repo to check potential bugs in playwright regarding Visual Regression Testing (VRT).
+This is a demo repo to check potential bugs in playwright regarding Visual Regression Testing (VRT). See [[BUG] Issues with VRT tests #23559](https://github.com/microsoft/playwright/issues/23559).
 
 The repo consists of an Angular app running playwright tests. The aim is to run VRT tests consistently.
 
@@ -24,7 +24,7 @@ Run `npm run test` from the root of the repo to run the tests. It will run the `
 >
 > All these scenarios were executed from a Windows OS as the base OS.
 
-### Hardware accelaration and headless mode
+### Hardware acceleration and headless mode
 
 - Go to the root of the repo.
 - Run the tests via `npm run test`.
