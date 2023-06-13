@@ -11,17 +11,15 @@ const _envSchema = z.object({
 const _env = _envSchema.parse(process.env);
 const _webServerPort = 4999;
 const _webServerUrl = `http://127.0.0.1:${_webServerPort}`;
-// filepaths are relative to the playwright config
 const _testsDir = "./tests";
 const _testsOutputBaseDir = `${_testsDir}/test-results`;
-const _testReportersOutputBaseDir = `${_testsOutputBaseDir}/reporters`;
-// monocart reporter dirs are NOT relative to the playwright config
-const _monocartReporterOutputDir = `./tests/monocart/test-results/reporters/monocart`;
+const _monoCartReporterOutputFile = `${_testsOutputBaseDir}/index.html`;
+const _htmlReporterOutputDir = `${_testsDir}/html-reporter`;
 
 export default defineConfig({
   testDir: _testsDir,
   // Folder for test artifacts such as screenshots, videos, traces, etc.
-  outputDir: `${_testsOutputBaseDir}/test-results`,
+  outputDir: `${_testsOutputBaseDir}`,
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -35,8 +33,15 @@ export default defineConfig({
   reporter: [
     [
       "html",
-      { open: "never", outputFolder: `${_testReportersOutputBaseDir}/html` },
+      { open: "never", outputFolder: _htmlReporterOutputDir },
     ],
+    [
+      "monocart-reporter",
+      {
+          name: "Monocart reporter",
+          outputFile: _monoCartReporterOutputFile,
+      },
+  ],
   ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
