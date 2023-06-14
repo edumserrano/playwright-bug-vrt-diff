@@ -25,7 +25,7 @@ export default defineConfig({
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: _env.CI,
   /* Retry on CI only */
-  retries: _env.CI ? 2 : 0,
+  retries: 2,
   /* Opt out of parallel tests on CI. */
   // eslint-disable-next-line no-undefined
   workers: _env.CI ? 1 : undefined,
